@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <title>Flat Color Generator</title>
 <meta name="description" content="Flat color generator for web design.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,4 +147,43 @@ function generateSpecific(){
   ga('send', 'pageview');
 
 </script>
+=======
+    <head>
+    	<title>Flat Color Generator</title>
+    	<meta name="description" content="Flat color generator for web design.">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="css/foundation.css" />
+    	<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    	<link rel="stylesheet" href="css/styles.css">
+    	
+    </head>
+    <body>
+        <a href="https://github.com/blaringsilence/flat-color-generator"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+        <!--intro section-->
+        <div class="intro row">
+            <div class="title text-center small-12 columns">
+                <h1>Flat Color Generator</h1>
+            </div>
+            <div class="desc small-12 columns">
+                <p>Below are 12 random "flat" colors to help you find the right tone for your design. Put in a value for the hue (in degrees) to get a random set of "flats" in that color, or generate another random 12 with the button below. Every shade has its identifying number in both hex and RGB.</p>
+            </div>
+        </div>
+        <div class="refresh row text-center"><button id="remove" style="width:10em;">Refresh</button></div>
+        <div class="row">
+            <form onsubmit="return false">
+            	<div class="large-10 columns"><input type="text" id="newHue" placeholder="Enter specific hue for the colors (degrees).."></div>
+            	<div class="large-2 columns"><button type="submit" id="hueChange" class="button tiny round">Go</button></div>
+            </form>
+        </div>
+        <div class="all row"></div>
+        <div class="more row"><button id="more" style="width:10em;">MORE?</button></div>
+    </body>
+
+	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="js/flatcolor.js"></script>
+	<script src="js/sticky.min.js"></script>
+	<script src="js/script.js"></script>
+>>>>>>> eed9fc01e2a5983cb600111a15b11b1b519fcbb1
 </html>
