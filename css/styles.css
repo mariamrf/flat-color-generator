@@ -34,6 +34,11 @@ body
 {
         padding-top: 3em;
 }
+#errorMessage{
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 0.8em;
+        color: rgb(240,38,60);
+}
 .title h1
 {
         font-family: 'Titillium Web', sans-serif;
