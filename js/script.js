@@ -1,15 +1,25 @@
-$(window).load(generate);
+$(document).ready(function(){
+	generate();
+});
 
-function generate() {
+function generate(h) {
 	$('#errorMessage').empty();
-	$('#newHue').val('');
+	if(h===undefined){
+		$('#newHue').val('');
 	for (var i = 0; i < 12; i++) {
-		var hsv = flatColor();
-		var rgb = HSVtoRGB(hsv.h, hsv.s, hsv.v);
-		var temp = RGBtoHEX(rgb.r, rgb.g, rgb.b);
-		var hex = temp.toUpperCase();
-		$('.all').append('<div id="colorBlock" class="color" style="background-color:rgb(' + rgb.r + "," + rgb.g + "," + rgb.b + ');"><span>' + 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')<br>' + hex + '</span></div>');
+		var color = new flatColor();
+		var hex = color.hex.toUpperCase();
+		$('.all').append('<div id="colorBlock" class="color" style="background-color:rgb(' + color.r + "," + color.g + "," + color.b + ');"><span>' + 'rgb(' + color.r + ',' + color.g + ',' + color.b + ')<br>' + hex + '</span></div>');
 	}
+}
+	else{
+		for (var i = 0; i < 12; i++) {
+			var col = new flatColor(h);
+			var hex = col.hex.toUpperCase();
+			$('.all').append('<div id="colorBlock" class="color" style="background-color:rgb(' + col.r + "," + col.g + "," + col.b + ');"><span>' + 'rgb(' + col.r + ',' + col.g + ',' + col.b + ')<br>' + hex + '</span></div>');
+		}
+	}
+
 
 }
 
@@ -19,25 +29,22 @@ removeAll = function() {
 };
 
 document.getElementById("remove").addEventListener('click', removeAll);
-document.getElementById("more").addEventListener('click', generate);
-document.getElementById("hueChange").addEventListener('click', generateSpecific);
-
-function generateSpecific() {
+document.getElementById("more").addEventListener('click', function(){
+	if($('#newHue').val()==='')
+		generate();
+	else
+		generate(parseInt($('#newHue').val(), 10));
+});
+document.getElementById("hueChange").addEventListener('click', function(){
 	var hue = parseInt($('#newHue').val(), 10);
-	if (hue && hue > 0 && hue < 360) {
+	if (hue && hue >= 0 && hue <= 360) {
 		$('.all').empty();
-		$('.more').empty();
-		$('#errorMessage').empty();
-		for (var i = 0; i < 12; i++) {
-			var hsv = flatColorfromHue(hue);
-			var rgb = HSVtoRGB(hsv.h, hsv.s, hsv.v);
-			var temp = RGBtoHEX(rgb.r, rgb.g, rgb.b);
-			var hex = temp.toUpperCase();
-			$('.all').append('<div id="colorBlock" class="color" style="background-color:rgb(' + rgb.r + "," + rgb.g + "," + rgb.b + ');"><span>' + 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')<br>' + hex + '</span></div>');
-		}
+		generate(hue);
 	}
-	else {
+	else{
 		$('#errorMessage').empty().append('Value must be between 0 & 360!');
 		$('#newHue').val('');
 	}
-}
+
+});
+
