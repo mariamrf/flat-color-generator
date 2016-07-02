@@ -5,46 +5,45 @@
     	<title>Flat Color Generator</title>
     	<meta name="description" content="Flat color generator for web design.">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<link rel="stylesheet" href="css/foundation.css" />
-    	<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-    	<link rel="stylesheet" href="css/styles.css">
-
-    <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-13306630-8', 'auto');
-  ga('send', 'pageview');
-
-</script>
-    	
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/styles.css">  
+        <script src="https://use.fontawesome.com/7aa88de75a.js"></script>
     </head>
     <body>
-        <a href="https://github.com/blaringsilence/flat-color-generator"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
         <!--intro section-->
-        <div class="intro row">
-            <div class="title text-center small-12 columns">
-                <h1>Flat Color Generator</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 title text-center">
+                    <h1>Flat Color Generator</h1>
+                </div>
+                <div class="row about">
+                    <div class="col-xs-12 text-center">
+                        Generates flat colors without a hard-coded, static list either randomly or within a specific hue value.
+                    </div>
+                </div>
+                <div class="row attr">
+                    <div class="col-xs-12 text-center">
+                      Made with <i class="fa fa-heart"></i> by <a target="_blank" href="http://maarouf.me">Mariam Maarouf</a>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 text-center buttons">
+                    <button class="btn def-btn" id="refresh"><i class="fa fa-refresh"></i> Refresh</button>
+                    <button class="btn def-btn" id="more"><i class="fa fa-plus"></i> More</button>
+                    <a target="_blank" href="https://github.com/blaringsilence/flat-color-generator"><button class="btn def-btn git-btn" id="github"><i class="fa fa-github"></i> Github Repo</button></a>
+                </div>
+                <div class="col-xs-12 text-center">
+                <form id="hue-form">
+                    <input id="hue" class="form-control" type="number" min="0" max="360" placeholder="Enter hue value"/>
+                </form>
+                </div>
             </div>
-            <div class="desc small-12 columns">
-                <p>Below are 12 random "flat" colors to help you find the right tone for your design. Put in a value for the hue (in degrees) to get a random set of "flats" in that color, or generate another random 12 with the button below. Every shade has its identifying number in both hex and RGB.</p>
+            <div class="row">
+                <div class="col-xs-12" id="grid">
+                </div>
             </div>
         </div>
-        <div class="refresh row text-center"><button id="remove" style="width:10em;">Refresh</button></div>
-        <div class="row">
-            <div class="small-12 columns" id="errorMessage"></div>
-        </div>
-        <div class="row">
-            <form onsubmit="return false">
-            	<div class="large-10 columns"><input type="text" id="newHue" placeholder="Enter specific hue for the colors (degrees).."></div>
-            	<div class="large-2 columns"><button type="submit" id="hueChange" class="button tiny round">Go</button></div>
-            </form>
-        </div>
-        <div class="all row"></div>
-        <div class="more row"><button id="more" style="width:10em;">MORE?</button></div>
-
     </body>
 
 	<script src="js/vendor/modernizr.js"></script>

@@ -21,6 +21,33 @@
         background: rgba(0,0,0,0.61);
         webkit-border-radius: 100px;
 }
+.buttons{
+        margin-top:1em;
+        margin-bottom:2em;
+}
+
+.git-btn{
+        background-color: #F2E124;
+}
+
+.def-btn{
+        transition-duration: 0.5s;
+}
+
+.def-btn:hover{
+        opacity:0.5;
+}
+
+@media(max-width: 991px){
+        .def-btn{
+                width:99%;
+                margin-bottom:0.5em;
+        }
+}
+#hue{
+        width:99%;
+}
+
 body
 {
         background-color: #F2F1EF;
@@ -34,11 +61,7 @@ body
 {
         padding-top: 3em;
 }
-#errorMessage{
-        font-family: 'Titillium Web', sans-serif;
-        font-size: 0.8em;
-        color: rgb(240,38,60);
-}
+
 .title h1
 {
         font-family: 'Titillium Web', sans-serif;
@@ -46,23 +69,60 @@ body
 .color
 {
         float: left;
-        height: 10em;
+        height: 8em;
         margin-bottom: 0.1em;
         margin-left: 0.2em;
         margin-top: 0.1em;
         padding: 1em;
+        border-radius: 0.5em;
         position: relative;
-        width: 10em;
+        width: 8em;
+
 }
 .color span
 {
         bottom: 1em;
+        font-size:0.9em;
         font-family: 'Titillium Web', sans-serif;
         left: 1em;
         position: absolute;
+        opacity:0;
+        transition-duration: 0.5s;
+}
+
+.color:hover span{
+        opacity:1;
 }
 button
 {
         font-family: 'Titillium Web', sans-serif;
         margin-left: 0.2em;
+}
+
+#grid{
+        margin-top:5vh;
+        margin-bottom:5vh;
+}
+
+
+.dark-text{
+        color:rgba(0,0,0,0.8);
+}
+
+.light-text{
+        color:rgba(236, 240, 241,1);
+}
+
+a{
+        color:rgba(0,0,0,0.8);
+}
+
+.attr{
+        margin-top:1em;
+        text-transform: lowercase;
+        opacity:0.8;
+}
+
+.attr i{
+        color: #EA3556;
 }
