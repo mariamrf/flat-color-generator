@@ -11,6 +11,7 @@ $(function(){
 	$('#refresh').click(function(e){
 		isHue = false;
 		$('#grid').empty();
+		$('#hue').val('');
 		generate();
 	});
 	$('#more').click(function(e){
