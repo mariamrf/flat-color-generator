@@ -1,13 +1,14 @@
 
-var flatColor = function(h){
+var flatColor = function(h, l){
+	l = ((typeof(l) === 'undefined') ? Math.random() : (l/100));
 	var PHI = 0.618033988749895; 
 	var s, v, hue;
 	if(h===undefined){
-		hue = (Math.floor(Math.random()*(360 - 0 + 1)+0))/360;
+		hue = (Math.floor(l*(360 - 0 + 1)+0))/360;
 		h = ( hue + ( hue / PHI )) % 360; 
 	} 
 	else h/=360;                                           
-	v = Math.floor(Math.random() * (100 - 20 + 1) + 20);
+	v = Math.floor(l * (100 - 20 + 1) + 20);
 	s = (v-10)/100;
 	v = v/100;
 

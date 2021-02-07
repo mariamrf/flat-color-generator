@@ -28,6 +28,12 @@ or, if you want to create a random color from a certain hue value/degree (0->360
 var deg = 45; //insert your degree here or fetch it from some element
 var x = new flatColor(deg);
 ```
+or, you can also force the luminosity which is random by default (0->100):
+```javascript
+var deg = 45; //insert your degree here or fetch it from some element
+var light = 80; //insert the desired luminosity here
+var x = new flatColor(deg, light);
+```
 Now you have a new flatColor `x` with the following attributes:
 ```javascript
 x.h //hue - number
